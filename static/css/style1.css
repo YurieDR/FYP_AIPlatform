@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:#ededed;!important;
+    max-width: 1920px;
+    margin: 0; !important;
+
+}
+
+.clearfix{
+    clear: both;
+}
+
+.menu
+{
+    position:sticky;
+position: -webkit-sticky;
+    z-index: 2;
+    top:0px;
+            box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        border: 1px solid #ebeef5;
+	font-size: 0;
+	padding: 0;
+	height: 60px;
+	background-color: #f7f7f7;
+
+}
+.menubar
+{
+	margin: 0;
+	padding-top:0.5%;
+    padding-left: 0;
+	position: absolute;
+	list-style-type: none;
+	width: 100%;
+	overflow-y: auto;
+}
+
+.menubar li
+{
+	padding:0px 5px;
+	width:15%;
+	display:inline-block;
+	cursor: pointer;
+	line-height: 35px;
+    position:relative;
+}
+
+
+
+.menubar div.underline{
+    position:absolute;
+    left:5%;
+    top:5px;
+    display:inline-block;
+}
+.menubar div.underline:hover{
+font-size: 16px;
+    color: black;
+}
+.menubar div.underline:hover:after{
+content: '';
+position: absolute;
+left:6px;
+bottom: 0px;
+height: 2px;
+width: 50px;
+background-color: black;
+
+}
+.menubar div.header-title{
+    position:absolute;
+    top:5px;
+    left:15%;
+    display:inline-block;
+    font-size: 22px;
+    text-align: center;
+}
+.menubar div.header-title:after{
+content: '';
+position: absolute;
+
+bottom: 0px;
+height: 0;
+width: 0;
+background-color: transparent;
+}
+.menubar div.menu-value{
+    position:absolute;
+    left:5%;
+    top:5px;
+    display:inline-block;
+    font-size: 17px;
+}
+.menubar div.menu-value:after{
+content: '';
+position: absolute;
+left:6px;
+bottom: 0px;
+height: 2px;
+width: 50px;
+background-color: black;
+}
+
+.menubar li.menu-value
+{
+	background-color: #ededed;
+}
+
+.menubar li.header-title
+{
+	width: 20%;
+}
+
+.menubar a
+{
+	display: block;
+	height: 50px;
+	font-family: "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体" ;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+}
+
+
+
+/*侧边栏选择器*/
+.sidenav {
+    height: 50%;
+    width: 0; /*原始宽度*/
+    margin-left: -5px;
+    position: fixed;
+    /*z-index、top、left共同控制侧栏的悬浮（上方1，下方-1）*/
+    z-index: 1;
+    top: 150px;
+    left: 0;
+    background-color: #ededed;
+    border-right: #353535 2px solid;
+    overflow-x: hidden;
+    transition: 0.5s; /*侧栏延迟0.5s显示*/
+    padding-top: 10px;
+}
+
+/*侧边栏标签选择器*/
+.sidenav h2{
+    color: #353535;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    font-family: "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体" ;
+	font-size: 20px;
+    display: block;
+    transition: 0.3s; /*标签延迟0.3s显示*/
+    word-break:keep-all;       /* 不换行 */
+
+white-space:nowrap;        /* 不换行 */
+
+overflow:hidden;           /* 内容超出宽度时隐藏超出部分的内容 */
+
+text-overflow:ellipsis;    /*溢出时显示省略标记...；需与overflow:hidden;一起使用*/
+
+}
+.sidenav a {
+    padding: 19px 8px 0px 32px;
+    text-decoration: none;
+    color: #444444;
+    font-family: "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体" ;
+	font-size: 15px;
+    display: block;
+    transition: 0.3s; /*标签延迟0.3s显示*/
+    word-break:keep-all;       /* 不换行 */
+
+white-space:nowrap;        /* 不换行 */
+
+overflow:hidden;           /* 内容超出宽度时隐藏超出部分的内容 */
+
+text-overflow:ellipsis;    /*溢出时显示省略标记...；需与overflow:hidden;一起使用*/
+}
+
+/*侧栏标签和关闭按钮光标的效果*/
+.sidenav a:hover, .offcanvas a:focus{
+    color: #353535;
+    font-weight: bold;
+}
+
+/*侧栏和关闭按钮的位置选择器*/
+.sidenav .closebtn {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-size: 26px;
+    margin-left: 50px;
+}
+
+/*主体内容*/
+#main {
+    transition: margin-left .5s;/*主体内容延迟0.5s整体y右移动*/
+    padding-top: 30px;
+    padding-left: 150px;
+}
+
+#main .nlpBase{
+        display:flex;align-items:center;justify-content:space-between;
+    margin-right:0;margin-left:0;
+    flex-wrap:nowrap;
+    width: 90%;
+}
+
+#main .nlpChapter{
+        display:block;align-items:center;justify-content:space-between;
+    margin-right:0;margin-left:0;
+    width: 90%;
+}
+#main .nlpText{
+    display:block;align-items:center;justify-content:space-between;
+   margin-right:0;margin-left:0;
+    width: 90%;
+
+}
+
+/*当文档高度小于450px时，改变侧栏的padding属性和字体大小*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.main-title{
+    margin: 5px 0px 10px 0px;
+}
+.main-subtitle{
+    margin: 0px 0px 30px 0px;
+}
+textarea {
+    -webkit-writing-mode: horizontal-tb !important;
+
+    font-family: monospace;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    column-count: initial !important;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    padding: 2px;
+}
+.input-text-content{
+        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+        border: 1px solid #ebeef5;
+    -webkit-font-smoothing: antialiased;
+    z-index: 0;
+    display: block;
+    width: 90%;
+    padding: 20px 24px 20px 20px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    color: #666;
+    outline: 0;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 20px;
+}
+.ant-btn {
+    width: 200px;
+    line-height: 1.499;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 2px solid transparent;
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+    cursor: pointer;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    height: 32px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: rgba(0,0,0,0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+    font-family: "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体" ;
+	font-size: 15px;
+}
+
+.ant-btn-primary {
+    color: #fff;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}
+.ant-btn-grey {
+    color: black;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: black;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}
+

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/resultdisplay.css">
+    <link rel="stylesheet" href="../static/css/style1.css">
+
+</head>
+<body>
+<div class="menu">
+    <ul class="menubar">
+        <li class="header-title"><a href=" ">
+            <div class="header-title"><strong>AI开发平台</strong></div>
+        </a></li>
+        <li class=""><a href="">
+            <div class="menu-value" style="text-indent:0.3em"><strong>词基础</strong></div>
+        </a></li>
+        <li class=""><a href="entityRelation.html">
+            <div class="underline"><strong>实体关系</strong></div>
+        </a></li>
+        <li class=""><a href="text.html">
+            <div class="underline"><strong>篇章分析</strong></div>
+        </a></li>
+        <li class=""><a href="event.html">
+            <div class="underline"><strong>事件分析</strong></div>
+        </a></li>
+        <li class=""><a href="API.html">
+            <div class="underline"><strong>程序接口</strong></div>
+        </a></li>
+    </ul>
+</div>
+
+<!--侧栏界面设计-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h2>功能列表</h2>
+    <a href="#">分词&词性分析</a>
+    <a href="#">词频统计</a>
+    <a href="#">实体识别</a>
+    <a href="#">词位置抽取</a>
+    <a href="#">关键词提取</a>
+    <a href="#">时间指代消解</a>
+    <a href="#">人物指代消解</a>
+    <a href="#">地点指代消解</a>
+</div>
+
+<!--主体部分-->
+<div id="main">
+    <h1 class="main-title">词基础类</h1>
+    <p class="main-subtitle"><span style="font-size:14px;cursor:pointer" onclick="openNav()">打开功能列表 &#9776;</span></p>
+    <div>
+        <textarea placeholder="请输入待分析文本" wrap="soft" spellcheck="false" rows="10" cols="5"
+                  class="input-text-content"></textarea>
+    </div>
+    <div class="clearfix"></div>
+    <div style="margin-bottom: 50px">
+        <div style="width: 60px;float: left;margin-left: 0px">
+            <button class="ant-btn ant-btn-grey">提交文本</button>
+        </div>
+    </div>
+    <div class="clearfix" style="margin-bottom: 40px"></div>
+    <div>
+
+
+
+    </div>
+
+    <div style="margin-top: 40px;">
+        <div class="nlpBase">
+            <div class="el-card is-always-shadow"><!---->
+                <div class="el-card__body">
+                    <div id="overview-analysis" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="fenci_cixingfenxi">分词&amp;词性分析：</div>
+
+                                            <div>
+                                                <div class="minWhite" id="load_fenci_model">
+
+                                                </div>
+                                            </div> <!----> <!----></div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">词性类别图示：</div>
+                                                <div>
+                                                    <div class="minWhite">
+
+                                                        <button type="button" class="ivu-btn n"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			名词</span></button>
+                                                        <button type="button" class="ivu-btn nt"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			时间词</span></button>
+                                                        <button type="button" class="ivu-btn wp"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			标点符号</span></button>
+                                                        <button type="button" class="ivu-btn p"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			介词</span></button>
+                                                        <button type="button" class="ivu-btn nx"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			字符串</span></button>
+                                                        <button type="button" class="ivu-btn m"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			数词</span></button>
+                                                        <button type="button" class="ivu-btn d"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			副词</span></button>
+                                                        <button type="button" class="ivu-btn a"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			形容词</span></button>
+                                                        <button type="button" class="ivu-btn q"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			量词</span></button>
+                                                        <button type="button" class="ivu-btn v"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			动词</span></button>
+
+                                                        <button type="button" class="ivu-btn ur"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			网络链接</span></button>
+                                                        <button type="button" class="ivu-btn c"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			连词</span></button>
+                                                        <button type="button" class="ivu-btn r"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			代词</span></button>
+                                                        <button type="button" class="ivu-btn u"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			助词</span></button>
+
+                                                        <button type="button" class="ivu-btn y"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			语气词</span></button>
+                                                        <button type="button" class="ivu-btn b"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			区别词</span></button>
+                                                        <button type="button" class="ivu-btn default"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			其他</span></button>
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-frequency" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="cipintongji">词频统计：</div>
+                                            <div>
+                                                <div class="minWhite" id="load_words_freq_model">
+
+                                                </div>
+                                            </div> <!----> <!----></div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">统计说明：</div>
+                                                <div>
+                                                    <div class="des">统计了各个词在文本中的出现次数。</div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-ner" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="shitishibie">实体识别：</div> <!---->
+                                            <div id="load_ner_words">
+                                            </div> <!---->
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">实体类别图示：</div>
+                                                <div>
+                                                    <div class="minWhite">
+
+                                                        <button type="button" class="ivu-btn org"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			机构名</span></button>
+                                                        <button type="button" class="ivu-btn person"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			人名</span></button>
+                                                        <button type="button" class="ivu-btn location"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			地点</span></button>
+                                                        <button type="button" class="ivu-btn time"
+                                                                style="margin: 3px;"><!----> <!---->
+                                                            <span>
+			时间</span></button>
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="ciweizhichouqu">词位置抽取：</div> <!----> <!---->
+                                            <div>
+                                                <div class="minWhite" id="load_words_position_model">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-key" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem; margin-top: 1rem;">
+                                    <div class="ivu-col">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="guanjiancitiqu">关键词提取：</div> <!----> <!---->
+                                            <div>
+                                                <div id="load_keywords_model">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="shijianzhidaixiaojie">时间指代消解：</div> <!---->
+                                            <!---->
+                                            <div>
+                                                <div class="minWhite" id="load_time_resolution_model">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">时间指代消解说明：</div>
+                                                <div>
+                                                    <div class="des">
+                                                        篇章对时间进行描述时，通常同时拥有模糊时间词和准确时间词，因此，时间词指代关系消解是指识别出模糊时间词具体指代的哪个准确时间词。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="renwuzhidaixiaojie">人物指代消解：</div> <!----> <!---->
+                                            <div>
+                                                <div class="minWhite" id="load_people_resolution_model">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">人物指代消解说明：</div>
+                                                <div>
+                                                    <div class="des">
+                                                        人物名称词即句中的人名。人物代名词包括“他”、“她”、“它们”、“我”、“此人”等，也可称为人称代词。人物名称词及其代名词的指代关系是指识别出人名代名
+                                                        词具体指代的哪个人物名称词。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="didianzhidaixiaojie">地点指代消解：</div> <!----> <!---->
+                                            <div>
+                                                <div class="minWhite" id="load_position_resolution_model">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">地点指代消解说明：</div>
+                                                <div>
+                                                    <div class="des">
+                                                        地点词包括国家、区域、省、市、县、州等，而地点的代名词包括“此地”、“该国”、“该市”、“这个地区”等。同样，篇章
+                                                        对地点进行描述时，通常同时拥有地点词和地点代名词，因此，地点词及其代名词的指代关系是指识别出地点代名词具体指代的哪个地点词。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    /*打开侧栏，修改侧栏宽度，主体左跨度、背景透明度*/
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "200px";
+
+    }
+
+    /*关闭侧栏，恢复原始侧栏宽度，主体左跨度、背景透明度*/
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+
+</body>
+</html>

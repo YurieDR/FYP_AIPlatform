@@ -1,0 +1,203 @@
+    body {margin: 0; padding: 0;background: #eff0f4;overflow-x: hidden;}
+    a {text-decoration: none;}
+    .card {
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px 0px;
+        border-radius: 3px;
+        padding: 20px;
+        background: #fff;
+    }
+    @keyframes sheen {
+        0% {
+            transform: skewY(-45deg) translateX(0);
+        }
+        100% {
+            transform: skewY(-45deg) translateX(15.5em);
+        }
+    }
+    .btn {
+        padding: 3px 1px;
+        text-align: center;
+        text-decoration: none;
+        color: #d5a867;
+        background:#fff;
+        border: 1px solid #d5a867;
+        font-size: 12px;
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .btn:before {
+        content: "";
+        background-color: rgba(255,255,255,0.5);
+        height: 100%;
+        width: 3em;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4.5em;
+        transform: skewX(-45deg) translateX(0);
+        transition: none;
+    }
+    .btn:hover {
+        background-color: #d5a867;
+        color: #fff;
+        border-bottom: 4px solid darken(#d5a867, 10%);
+    }
+    .btn:hover:before {
+        transform: skewX(-45deg) translateX(18.5em);
+        transition: all 0.5s ease-in-out;
+    }
+    
+
+/* header 样式 */
+header {
+    height: 80px;
+    
+    background-size: cover;
+}
+header ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-left: 200px;
+    background: url(../img/headerBg.png) repeat;
+}
+header ul li {
+    width: 200px;
+    height: 100%;
+    font-size: 12px;
+}
+header ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: inherit; 
+    line-height: 80px;
+}
+header ul li.active {
+    border-bottom: 2px solid #d5a867;
+    background: linear-gradient(1turn,#fff7e8,#fffcf5);
+    color: #d5a867;
+    font-size: 12px;
+}
+/* mian 样式 */
+/* textarea 样式 */
+ main {
+     padding: 0 49px;
+ }
+
+ main .textarea {
+     margin-top: 150px;
+     height: 252.59px;
+     width: 100%;
+ }
+ main .textarea #textarea {
+     width: 100%;
+     line-height: 1.5rem;
+     max-width: 100%;
+     height: auto;
+     min-height: 32px;
+     vertical-align: bottom;
+     font-size: 14px;
+     height: 160.5px;
+     box-sizing: border-box;
+     padding: 1.35rem;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.08);
+    border: 1px solid #dddee1;
+    border-radius: 4px;
+    color: #495060;
+    background-color: #fff;
+    background-image: none;
+    position: relative;
+    cursor: text;
+    transition: border .2s ease-in-out,background .2s ease-in-out,box-shadow .2s ease-in-out;
+ }
+ main .textarea button {
+     width: 160px;
+     height: 40px;
+     border-radius: 4px;
+     margin-top: 10px;
+ }
+
+ /* 识别结果 样式 */
+
+ main .result {
+     height: 1072px;
+     margin: 50px 0;
+    
+ }
+ main .result .relult-title {
+     font-size: 12px;
+     opacity: .4;
+ }
+ main .result .title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: .8rem;
+    color: #666;
+    opacity: .9;
+ }
+ main .result .nlp {
+     height: 151.19px;
+     box-sizing: border-box;
+     padding: 17.5px;
+     display: flex;
+     
+     overflow: hidden;
+ }
+ main .result .nlp .nlp-left {
+     display: inline-block;
+     width: 66.6%;
+     overflow-y: auto;
+ }
+ main .result .nlp .nlp-right {
+    display: inline-block;
+    width: 33.3%;
+ }
+ main .result .cell {
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 9px;
+    background-color: #9ee1d6;
+    margin: 3px;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: 4px;
+    transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
+    color: #495060;
+ }
+ main .result .cell:hover {
+     background: #fff;
+     color: #006699;
+ }
+
+ main .relation {
+     width: 100%;
+     height: 869.19px;
+     box-sizing: border-box;
+     padding: 17.5px;
+     display: flex;
+ }
+ main .relation .relation-left {
+     display: inline-block;
+     position: relative;
+     width: 100%;
+ }
+ main .relation .relation-left #myDiagramDiv {
+    width: 90%;
+    height: 800px;
+    background-color: #eff0f4;
+    box-shadow: inset 0 2px 12px 0 rgba(0,0,0,.1);
+ }
+ main .relation .relation-right {
+    display: inline-block;
+    width: 33.3%;
+ }

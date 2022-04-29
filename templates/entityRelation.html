@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/resultdisplay.css">
+    <link rel="stylesheet" href="../static/css/style1.css">
+
+</head>
+<body>
+<div class="menu">
+    <ul class="menubar">
+        <li class="header-title"><a href=" ">
+            <div class="header-title"><strong>AI开发平台</strong></div>
+        </a></li>
+        <li class=""><a href="wordBasic.html">
+            <div class="underline" style="text-indent:0.3em"><strong>词基础</strong></div>
+        </a></li>
+        <li class=""><a href="entityRelation.html">
+            <div class="menu-value"><strong>实体关系</strong></div>
+        </a></li>
+        <li class=""><a href="text.html">
+            <div class="underline"><strong>篇章分析</strong></div>
+        </a></li>
+        <li class=""><a href="event.html">
+            <div class="underline"><strong>事件分析</strong></div>
+        </a></li>
+        <li class=""><a href="API.html">
+            <div class="underline"><strong>程序接口</strong></div>
+        </a></li>
+    </ul>
+</div>
+
+<!--侧栏界面设计-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h2>功能列表</h2>
+    <a href="#">分词&词性分析</a>
+    <a href="#">词频统计</a>
+    <a href="#">实体识别</a>
+    <a href="#">词位置抽取</a>
+    <a href="#">关键词提取</a>
+    <a href="#">时间指代消解</a>
+    <a href="#">人物指代消解</a>
+    <a href="#">地点指代消解</a>
+</div>
+
+<!--主体部分-->
+<div id="main">
+    <h1 class="main-title">实体关系类</h1>
+    <p class="main-subtitle"><span style="font-size:14px;cursor:pointer" onclick="openNav()">打开功能列表 &#9776;</span></p>
+    <div>
+        <textarea placeholder="请输入待分析文本" wrap="soft" spellcheck="false" rows="10" cols="5"
+                  class="input-text-content"></textarea>
+    </div>
+    <div >
+        <div style="width: 60px;float: left;margin-left: 0px">
+            <button class="ant-btn ant-btn-grey">提交文本</button>
+        </div>
+    </div>
+    <div class="clearfix" style="margin-bottom: 40px"></div>
+    <div >
+        <div class="nlpChapter">
+            <div class="el-card is-always-shadow"><!---->
+                <div class="el-card__body">
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="yicunjufafenxi">依存句法分析：</div> <!----> <!---->
+                                            <div>
+                                                <div id="load_jufafenxi_model"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">依存句法分析说明：</div>
+                                                <div>
+                                                    <div class="des">依存句法 (Dependency Parsing, DP)
+                                                        通过分析语言单位内成分之间的依存关系揭示其句法结构，即分析识别句子中的“主谓宾”、“定状补”这些语法成分，并分析各成分之间的关系。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="yuyijuesebiaozhu">语义角色标注：</div> <!----> <!---->
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">语义角色标注说明：</div>
+                                                <div>
+                                                    <div class="des">语义角色标注 (Semantic Role Labeling, SRL)
+                                                        是用来标注句子中某些短语为给定谓词的论元 (语义角色) ，如施事、受事、时间和地点等。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="overview-digest" class="border-bottom">
+                        <div class="nlpBsCom">
+                            <div class="ivu-row" style="padding: 1.25rem;">
+                                <div style="padding-bottom: 1.5rem;">
+                                    <div class="ivu-col ivu-col-span-16">
+                                        <div class="tagList">
+                                            <div class="tagTitle" id="yuyijuesebiaozhu">语义依存树分析：</div> <!----> <!---->
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ivu-col ivu-col-span-8" style="padding-left: 3.65rem;">
+                                        <div style="width: 80%;">
+                                            <div class="tagList">
+                                                <div class="tagTitle">语义依存树分析说明：</div>
+                                                <div>
+                                                    <div class="des">分析句子各个语言单位之间的语义关联,并将语义关联以依存结构呈现。
+                                                    </div>
+                                                </div> <!----> <!----></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    /*打开侧栏，修改侧栏宽度，主体左跨度、背景透明度*/
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "200px";
+
+    }
+
+    /*关闭侧栏，恢复原始侧栏宽度，主体左跨度、背景透明度*/
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+
+</body>
+</html>

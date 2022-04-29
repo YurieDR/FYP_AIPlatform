@@ -1,0 +1,105 @@
+/* 环形弹出框 样式 */
+.nav-bak-inner{
+    width: 0px;
+    height: 0px;
+    background-color: #f00;
+    z-index: 10000;
+/* display: none; */
+position: absolute;
+border-radius: 50%;
+/* transform: scale(0.7); */
+}	
+.nav-item{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;		
+    /* background: #f00; */
+    position: absolute;
+    transform-origin: 0 0;
+}
+.nav-link{
+    transform-origin: 0 0;	
+    transition: all .2s .3s ease-in-out;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+        cursor: pointer;
+        padding: 0;
+}
+.nav-item-link{
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 0 0 200px 0;
+    transform-origin: 0 0;
+    transition: all .1s .1s linear;			
+}
+.nav-item:hover .nav-item-link{
+    width: 200px;
+    height: 200px;
+}
+.nav-item:hover .nav-text-link{
+    padding-left: 0px;
+    padding-top: 0px;
+    font-size: 18px;
+    text-align: center;
+}
+.nav-item:hover .nav-link{
+    transform: rotateZ(-50deg);
+}
+/* .nav-bg-link:hover .nav-text-link{
+    color: #c40000;
+    font-weight: bold;
+} */
+.nav-bg-link{
+    background-image: url(../img/05.png);
+    width: 65%;
+    height: 65%;
+    background-repeat: no-repeat;
+    background-position: 34% 34%;
+    background-size: 84%;
+    opacity: 0.8;
+}
+.nav-item-link:nth-child(1){
+    transform: rotateZ(90deg);
+}
+.nav-item-link:nth-child(2){
+    transform: rotateZ(180deg);
+}
+.nav-item-link:nth-child(3){
+    transform: rotateZ(270deg);
+}
+.nav-item-link:nth-child(4){
+    transform: rotateZ(360deg);
+}
+.nav-item:nth-child(1){
+    transform: rotateZ(0deg);
+    /* background: transparent; */
+    z-index: 1;
+    border-left: 0;
+}	
+/* .triangle:hover {
+border-top: 116.27px solid red;
+} */
+
+.nav-text-link{
+transition: all .5s .1s linear;
+font-size: 0;
+color: rgb(236, 236, 236);
+padding-left: 0px;
+display: inline-block;
+transform: rotateZ(136deg);
+padding-top: 0px;
+position: absolute;
+top: 39px;
+left: 31px;
+}
+.nav-item-link:first-child .nav-text-link{
+transform: rotateZ(312deg);
+}
+.nav-item-link:nth-child(2) .nav-text-link {
+top: 42px;
+left: 15px;
+}
